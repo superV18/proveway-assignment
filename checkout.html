@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proveway Assignment</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #fff4f8;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .checkout-container {
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      h1 {
+        color: #ff6b82;
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+
+      button {
+        background: #ff6b82;
+        color: white;
+        border: none;
+        padding: 14px 32px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(255, 107, 130, 0.3);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .slide-out {
+        animation: slideOut 0.7s forwards;
+      }
+
+      @keyframes slideOut {
+        100% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="checkout-container" id="checkoutBox">
+      <h1>Let’s go to Proveway Assignment Checkout</h1>
+      <p>Click the button below to claim your BOGO offer!</p>
+      <button onclick="goToOffer()">Checkout Now</button>
+    </div>
+
+    <script>
+      function goToOffer() {
+        const checkout = document.getElementById("checkoutBox");
+        checkout.classList.add("slide-out");
+
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 700);
+      }
+    </script>
+  </body>
+</html>
